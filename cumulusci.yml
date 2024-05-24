@@ -1,0 +1,28 @@
+minimum_cumulusci_version: '3.86.0'
+project:
+    name: new-project
+    package:
+        name: new-project
+        api_version: '60.0'
+    git:
+        default_branch: 'main'
+        prefix_feature: 'feature/'
+        prefix_beta: 'beta/'
+        prefix_release: 'release/'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/new-project/tests
+            options:
+                outputdir: robot/new-project/results
+
+    robot_testdoc:
+        options:
+            path: robot/new-project/tests
+            output: robot/new-project/doc/new-project_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
